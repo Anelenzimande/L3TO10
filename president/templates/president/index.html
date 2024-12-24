@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Political Candidate</title>
+    <!-- Bootstrap -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Jonathon Mayer Williams</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'index' %}">Home</a> 
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'about' %}">About</a>
+            </li> 
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'blog_list' %}">Blog</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'create_post' %}">Create Post</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'login' %}">Login</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'register' %}">Register</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container mt-5">
+    <div class="row">
+        <!-- image leftside -->
+        <div class="col-md-6">
+            <img src="{% static 'images/president.jpg' %}" alt="Candidate Image" class="img-fluid rounded" width='400'>
+        </div>
+
+        <!-- welcome message -->
+        <div class="col-md-6">
+            <h2><strong>J.M Williams Campaign</strong></h2>
+            <p>Hello, I am Jonathon Williams, and I am committed to making a positive change in our community. My mission is to serve the people and ensure that we move towards a prosperous future together. Join me in this journey for a better tomorrow.</p>
+
+            {% if user.is_authenticated %}
+                <p>Welcome back, {{ user.username }}!</p>
+                <a href="{% url 'create_post' %}" class="btn btn-primary">Create a New Post</a>
+                <a href="{% url 'logout' %}" class="btn btn-danger ml-2">Logout</a>
+            {% else %}
+                <p>Please <a href="{% url 'login' %}">login</a> or <a href="{% url 'register' %}">register</a> to support the campaign.</p>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+<footer class="bg-dark text-white text-center py-3 mt-5">
+    <p>&copy; 2024 John Williams Campaign. All rights reserved.</p>
+</footer>
+
+<!-- Bootstrap JS and jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
+

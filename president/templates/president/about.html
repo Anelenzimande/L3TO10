@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About John Williams</title>
+    <!-- Bootstrap  -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #000080;">
+    <div class="container">
+        <a class="navbar-brand" href="#">About- J.M Williams</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    
+                    <a class="nav-link" href="{% url 'index' %}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'about' %}">About</a>
+                </li> 
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'blog_list' %}">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'create_post' %}">Create Post</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'login' %}">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'register' %}">Register</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+                </li>
+            </ul>
+        </div>
+</nav>
+
+<!-- About Section -->
+<div class="container mt-5">
+    <div class="row align-items-center">
+        <!-- Text Section -->
+        <div class="col-md-6">
+            <h2>About John Williams</h2>
+            <h3>A Vision for Every Family</h3>
+            <p>
+                John Williams is not just a politician; he is a passionate advocate for the people. Raised in a humble background, he knows firsthand the struggles faced by working-class and low-income families. John’s mission is simple: to create policies that ensure every family, no matter their income, has a chance to thrive.
+            </p>
+            <p>
+                As a patriot, John believes in the strength of our nation and the power of unity. He knows that when we come together, our country can achieve greatness. His work is grounded in the belief that by helping the most vulnerable, we uplift the whole of society.
+            </p>
+            <h4>Everybody deserves a solid foundation</h4>
+            <ul>
+                <li><strong>Empowering Low-Income Families:</strong> John Williams is committed to policies that provide affordable housing, healthcare, and education to those who need it most.</li>
+                <li><strong>Patriotism and National Unity:</strong> A strong believer in the values of patriotism, John works to bring the nation together, ensuring that all citizens, regardless of background, have a voice in our democracy.</li>
+                <li><strong>Community-Focused Leadership:</strong> John believes that the strength of our country lies in its communities. He works to create strong neighborhoods that support families and encourage local entrepreneurship.</li>
+                <li><strong>Social Responsibility:</strong> He is dedicated to ensuring that every citizen, especially the marginalized, is supported and empowered to reach their fullest potential.</li>
+            </ul>
+            <p>You've heard my story, <a href="{% url 'blog_list' %}">click here to share yours</a>.</p>
+        </div>
+
+        <!-- Image Section -->
+        <div class="col-md-6">
+            <img src="{% static 'images/about.jpeg' %}" alt="Candidate Image" class="img-fluid rounded" width='600'>
+        </div>
+    </div>
+</div>
+
+<!-- footer-->
+<footer class="bg-primary text-white text-center py-3 mt-5">
+    <p>&copy; 2024 John Williams Campaign. All rights reserved.</p>
+</footer>
+
+
+<!-- Bootstrap-->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+
+</body>
+</html>
+
+
